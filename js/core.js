@@ -91,13 +91,13 @@
   B.quiz = function (b, x) {
     var w = el('div', { class: 'quiz' }), sc = 0, an = 0, res = el('p', { class: 'hint' });
     b.qs.forEach(function (q, i) {
-      var d = el('div', { class: 'q' }, '<b>' + (i + 1) + '. ' + q[0] + '</b>');
+      var d = el('div', { class: 'q' }, '<b>' + (i + 1) + '. ' + esc(q[0]) + '</b>');
       q[1].forEach(function (o, j) {
-        var btn = el('button', null, o);
+        var btn = el('button', null, esc(o));
         btn.onclick = function () {
           if (d.dataset.done) return; d.dataset.done = 1; an++;
           if (j === q[2]) { sc++; btn.classList.add('ok'); } else { btn.classList.add('no'); d.querySelectorAll('button')[q[2]].classList.add('ok'); }
-          d.appendChild(el('p', null, q[3] || ''));
+          d.appendChild(el('p', null, esc(q[3] || '')));
           if (an === b.qs.length) { res.textContent = 'Resultado: ' + sc + ' de ' + b.qs.length + ' · nota ' + (sc / b.qs.length * 5).toFixed(1) + ' / 5.0'; store.set('quiz:' + x.lid + ':' + x.n, sc); }
         };
         d.appendChild(btn);
