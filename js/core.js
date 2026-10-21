@@ -98,7 +98,7 @@
           if (d.dataset.done) return; d.dataset.done = 1; an++;
           if (j === q[2]) { sc++; btn.classList.add('ok'); } else { btn.classList.add('no'); d.querySelectorAll('button')[q[2]].classList.add('ok'); }
           d.appendChild(el('p', null, q[3] || ''));
-          if (an === b.qs.length) { res.textContent = 'Resultado: ' + sc + ' de ' + b.qs.length; store.set('quiz:' + x.lid + ':' + x.n, sc); }
+          if (an === b.qs.length) { res.textContent = 'Resultado: ' + sc + ' de ' + b.qs.length + ' · nota ' + (sc / b.qs.length * 5).toFixed(1) + ' / 5.0'; store.set('quiz:' + x.lid + ':' + x.n, sc); }
         };
         d.appendChild(btn);
       });
