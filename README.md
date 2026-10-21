@@ -8,3 +8,6 @@ Sitio interactivo del curso: lecciones, inspectores tipo F12, demos en vivo, lab
 
 ## Flujo de ramas
 `develop` = trabajo diario · `main` = solo lo que se despliega (GitHub Pages).
+
+## Herramientas de aula (rama `develop_mejoras`)
+Botón flotante **Aula** (abajo a la derecha) y atajos de teclado: `B` menú · `F` pantalla completa · `M` modo enfoque · `+`/`−`/`0` tamaño · `L` láser · `D` pizarra · `T` temporizador · `K` buscar lección · `←`/`→` anterior/siguiente · `?` ayuda. El **modo docente** desbloquea todas las lecciones solo en el equipo donde se activa.
