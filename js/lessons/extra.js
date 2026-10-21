@@ -67,9 +67,9 @@
       { t: 'gitsim', title: 'Flujo de rama por funcionalidad', files: ['index.html', 'api.ts'] },
       { t: 'h', text: 'Hitos y calendario', min: 20 },
       { t: 'table', head: ['Hito', 'Semana', 'Entregable', 'Peso sugerido'], rows: [
-        ['H1 · Propuesta y estructura', '4', 'Idea aprobada, especificación, repositorio y HTML semántico de las pantallas', '10 %'],
-        ['H2 · Interfaz responsive', '7', 'Maquetación completa con CSS/Tailwind, formulario validado', '20 %'],
-        ['H3 · Datos e interactividad', '9', 'Consumo del endpoint con estados, búsqueda y eventos', '25 %'],
+        ['H1 · Propuesta y estructura', '8', 'Idea aprobada, especificación, repositorio y HTML semántico de las pantallas', '10 %'],
+        ['H2 · Interfaz responsive', '9', 'Maquetación completa con CSS/Tailwind, formulario validado', '20 %'],
+        ['H3 · Datos e interactividad', '10', 'Consumo del endpoint con estados, búsqueda y eventos', '25 %'],
         ['H4 · Calidad y despliegue', '11', 'TypeScript, persistencia, CI/CD y URL pública, auditoría de IA', '25 %'],
         ['H5 · Sustentación', '12', 'Demostración de 10 minutos y preguntas individuales', '20 %']] },
       { t: 'note', kind: 'tip', html: '<p>La sustentación incluye preguntas individuales: cada integrante debe poder explicar cualquier parte del código. Si usaste IA, tienes que entender y poder defender cada línea.</p>' }
@@ -165,7 +165,7 @@
     id: 'q',
     lead: 'Evalúate antes de presentar. El simulacro elige preguntas al azar de todo el curso; los parciales y quices oficiales los define el docente.',
     blocks: [
-      { t: 'h', text: 'Simulacro de parcial', min: 25 },
+      { t: 'h', text: 'Simulacro de examen', min: 25 },
       { t: 'custom', build: function (w, x, U) {
         var el = U.el, box = el('div', { class: 'play' }), n = 10, wrap = el('div'), mods = {};
         POOL.forEach(function (p) { mods[p[0]] = true; });
@@ -181,16 +181,16 @@
       } },
       { t: 'h', text: 'Propuesta de evaluación del curso', min: 15 },
       { t: 'table', head: ['Componente', 'Porcentaje sugerido', 'Cuándo'], rows: [
-        ['Parcial 1 · Módulos 0 a 2 (HTML, CSS, Flexbox)', '15 %', 'Semana 6'],
-        ['Parcial 2 · Módulos 3 y 4 (responsive, JavaScript, REST)', '15 %', 'Semana 9'],
-        ['Quices cortos de cada clase', '10 %', 'Continuo'],
+        ['Primer examen · HTML5 estructural', '10 %', 'Semana 7'],
+        ['Examen final integrador', '15 %', 'Semana 12'],
+        ['Quices (1, 2 y 3) y participación', '10 %', 'Semanas 4, 6 y 9'],
         ['Talleres (1.1, integrador M2, 3.1, 4.1, 5.1)', '25 %', 'Una nota por taller'],
-        ['Proyecto integrador (hitos y sustentación)', '35 %', 'Semanas 4 a 12']] },
+        ['Proyecto integrador (hitos y sustentación)', '35 %', 'Semanas 8 a 12']] },
       { t: 'note', kind: 'tip', html: '<p>Según el PIAA, los porcentajes definitivos se acuerdan al inicio del curso. La tabla es una propuesta equilibrada: la mayor parte de la nota premia el hacer (talleres y proyecto) y no un único examen.</p>' },
-      { t: 'h', text: 'Guía de estudio por parcial', min: 15 },
+      { t: 'h', text: 'Guía de estudio por examen', min: 15 },
       { t: 'cards', items: [
-        { h: 'Parcial 1', html: '<ul><li>Cliente-servidor y HTTP</li><li>Estructura documental y etiquetas semánticas</li><li>Selectores y especificidad</li><li>Box model y Flexbox</li><li>Prueba práctica: maquetar una tarjeta a partir de un registro</li></ul>' },
-        { h: 'Parcial 2', html: '<ul><li>Mobile-First, media queries, Tailwind</li><li>Validación de formularios</li><li>Scope, closures, DOM y eventos</li><li>Event Loop, promesas, async/await, fetch</li><li>Prueba práctica: consumir un endpoint y mostrar estados</li></ul>' }] }
+        { h: 'Primer examen (semana 7)', html: '<ul><li>Cliente-servidor y HTTP</li><li>Estructura documental, texto, listas, imágenes y enlaces</li><li>Detección de errores de sintaxis</li><li>Prueba práctica: ficha informativa en HTML5</li></ul>' },
+        { h: 'Examen final (semana 12)', html: '<ul><li>Selectores, box model, Flexbox y Mobile-First</li><li>Validación de formularios</li><li>Scope, closures, DOM y eventos</li><li>Event Loop, promesas, async/await, fetch</li><li>Prueba práctica: consumir un endpoint y mostrar estados</li></ul>' }] }
     ]
   });
 })();

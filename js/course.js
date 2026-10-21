@@ -4,7 +4,7 @@ window.Course = {
   code: '334G8F',
   cur: '1.2b',
   /* Última lección habilitada para los estudiantes. Las siguientes muestran "se habilita cuando lleguemos a este tema". Cambia este id para abrir más contenido (o pon null para abrir todo). */
-  openUntil: '3.t',
+  openUntil: 'e1',
   done: ['0.1', '0.2a', '0.2b', '0.2c', '0.2t', '1.1a', '1.1b', '1.2a'],
   modules: [
     { id: 'pia', name: 'Programa del curso', topics: [
@@ -23,7 +23,8 @@ window.Course = {
       { name: 'Tema 1.2 · Etiquetas esenciales y semántica', lessons: [
         ['1.2a', 'Estructura de texto, enlaces, listas e imágenes', 'tema'],
         ['1.2b', 'El contenedor genérico <div> y agrupamiento de contenido', 'tema'],
-        ['1.2t', 'Taller 1.1: primera estructura web semántica', 'taller']] }] },
+        ['1.2t', 'Taller 1.1: primera estructura web semántica', 'taller'],
+        ['z1', 'Quiz 1: arquitectura web y HTML5', 'eval']] }] },
     { id: 'm2', name: 'Módulo 2 · Ingeniería de interfaces, CSS3 y maquetación', topics: [
       { name: 'Tema 2.1 · Fundamentos de CSS3 y selectores', lessons: [
         ['2.1a', 'Sintaxis CSS, enlazado externo y reglas de estilo', 'tema'],
@@ -31,12 +32,18 @@ window.Course = {
       { name: 'Tema 2.2 · Diagramación y layout moderno', lessons: [
         ['2.2a', 'El modelo de caja (Box Model)', 'tema'],
         ['2.2b', 'Maquetación flexible con CSS Flexbox', 'tema']] },
-      { name: 'Integrador', lessons: [['2.t', 'Taller integrador: del registro SQL a la tarjeta web', 'taller']] }] },
+      { name: 'Integrador', lessons: [['2.t', 'Taller integrador: del registro SQL a la tarjeta web', 'taller'],
+        ['z2', 'Quiz 2: CSS3 y maquetación', 'eval']] }] },
     { id: 'm3', name: 'Módulo 3 · Responsive design y frameworks de utilidad', topics: [
       { name: 'Tema 3.1 · Adaptabilidad y Mobile-First', lessons: [
         ['3.1a', 'Metatag viewport y principios Mobile-First', 'tema'],
         ['3.1b', 'Componentes e integración de Tailwind CSS', 'tema'],
-        ['3.t', 'Taller 3.1: formulario de registro con validaciones', 'taller']] }] },
+        ['3.t', 'Taller 3.1: formulario de registro con validaciones', 'taller']] },
+      { name: 'Evaluación', lessons: [['e1', 'Primer examen: HTML5 estructural', 'eval']] }] },
+    { id: 'proy', name: 'Proyecto integrador · inicia tras el Primer examen', topics: [
+      { name: 'Proyecto en equipo', lessons: [
+        ['p1', 'Guía general, hitos y requerimientos', 'proy'],
+        ['p2', 'Rúbrica y criterios de evaluación por hitos', 'proy']] }] },
     { id: 'm4', name: 'Módulo 4 · JavaScript y asincronismo', topics: [
       { name: 'Tema 4.1 · Fundamentos de JavaScript (ES6+)', lessons: [
         ['4.1a', 'Contextos de ejecución, scope y funciones', 'tema'],
@@ -44,33 +51,32 @@ window.Course = {
       { name: 'Tema 4.2 · Asincronismo y consumo de APIs REST', lessons: [
         ['4.2a', 'Concurrencia, Event Loop, promesas y async/await', 'tema'],
         ['4.2b', 'Consumo de endpoints con Fetch API', 'tema'],
-        ['4.t', 'Taller 4.1: consumo dinámico de datos REST', 'taller']] }] },
+        ['4.t', 'Taller 4.1: consumo dinámico de datos REST', 'taller'],
+        ['z4', 'Quiz 3: JavaScript y APIs', 'eval']] }] },
     { id: 'm5', name: 'Módulo 5 · TypeScript, persistencia local y despliegue', topics: [
       { name: 'Tema 5.1 · Tipado estático y seguridad', lessons: [['5.1', 'Transición hacia TypeScript: tipos, interfaces y contratos', 'tema']] },
       { name: 'Tema 5.2 · Persistencia y servidores serverless', lessons: [
         ['5.2a', 'Almacenamiento local: LocalStorage e IndexedDB', 'tema'],
         ['5.2b', 'Flujos CI/CD y despliegue en Vercel / AWS', 'tema'],
-        ['5.t', 'Taller 5.1: auditoría de código asistida por IA y despliegue', 'taller']] }] },
+        ['5.t', 'Taller 5.1: auditoría de código asistida por IA y despliegue', 'taller']] },
+      { name: 'Evaluación', lessons: [['e2', 'Examen final integrador', 'eval']] }] },
     { id: 'cierre', name: 'Cierre del curso', topics: [
-      { name: 'Proyecto integrador', lessons: [
-        ['p1', 'Guía general y requerimientos del proyecto', 'proy'],
-        ['p2', 'Rúbrica y criterios de evaluación por hitos', 'proy']] },
-      { name: 'Evaluación', lessons: [['q', 'Quiz y evaluaciones de parciales', 'eval']] }] }
+      { name: 'Preparación', lessons: [['q', 'Simulacro de parcial y propuesta de evaluación', 'eval']] }] }
   ],
   /* Propuesta de distribución: 12 semanas de 4 horas presenciales (PIAA: 48 h presenciales). */
   weeks: [
     ['Semana 1', 'Módulo 0 · entorno y Git', ['0.1']],
     ['Semana 2', 'Módulo 0 · repaso y taller de nivelación', ['0.2a', '0.2b', '0.2c', '0.2t']],
     ['Semana 3', 'HTML5 · cliente-servidor y estructura', ['1.1a', '1.1b']],
-    ['Semana 4', 'HTML5 · etiquetas, div y Taller 1.1', ['1.2a', '1.2b', '1.2t']],
+    ['Semana 4', 'HTML5 · etiquetas, div, Taller 1.1 y Quiz 1', ['1.2a', '1.2b', '1.2t', 'z1']],
     ['Semana 5', 'CSS3 · sintaxis y selectores', ['2.1a', '2.1b']],
-    ['Semana 6', 'CSS3 · box model, Flexbox y taller', ['2.2a', '2.2b', '2.t']],
-    ['Semana 7', 'Responsive y Tailwind, taller de formularios', ['3.1a', '3.1b', '3.t']],
-    ['Semana 8', 'JavaScript · scope y DOM', ['4.1a', '4.1b']],
-    ['Semana 9', 'JavaScript · asincronismo y APIs REST', ['4.2a', '4.2b', '4.t']],
-    ['Semana 10', 'TypeScript y persistencia local', ['5.1', '5.2a']],
-    ['Semana 11', 'CI/CD, despliegue y auditoría con IA', ['5.2b', '5.t']],
-    ['Semana 12', 'Proyecto integrador y evaluación', ['p1', 'p2', 'q']]
+    ['Semana 6', 'CSS3 · box model, Flexbox, taller y Quiz 2', ['2.2a', '2.2b', '2.t', 'z2']],
+    ['Semana 7', 'Responsive y Tailwind, taller de formularios, Primer examen', ['3.1a', '3.1b', '3.t', 'e1']],
+    ['Semana 8', 'Inicio del proyecto (H1) · JavaScript: scope y DOM', ['p1', 'p2', '4.1a', '4.1b']],
+    ['Semana 9', 'JavaScript · asincronismo y APIs REST (H2)', ['4.2a', '4.2b', '4.t', 'z4']],
+    ['Semana 10', 'TypeScript y persistencia local (H3)', ['5.1', '5.2a']],
+    ['Semana 11', 'CI/CD, despliegue y auditoría con IA (H4)', ['5.2b', '5.t']],
+    ['Semana 12', 'Sustentación del proyecto (H5) y Examen final', ['e2', 'q']]
   ],
   lessons: {},
   add: function (l) { this.lessons[l.id] = l; },
